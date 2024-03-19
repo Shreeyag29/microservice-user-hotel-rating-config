@@ -1,0 +1,11 @@
+eureka:
+  instance:
+    hostname: localhost
+
+  client:
+    register-with-eureka: false  #this property means that this service itself should not register with eureka
+    fetch-registry: false  #it should not be able to access service registry
+
+server:
+  port: 8761
+

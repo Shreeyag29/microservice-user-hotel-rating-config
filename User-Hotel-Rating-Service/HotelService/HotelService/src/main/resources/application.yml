@@ -1,0 +1,38 @@
+server:
+  port: 8087
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/microservice
+    username: postgres
+    password: P^ssw0rd213
+
+    #with the help of below property we are able to create table from this entity
+  jpa:
+    hibernate:
+      ddl-auto: update  #update schemas if required
+    show-sql: true #whatever sql is generate we can see in console
+
+  application:
+    name: HOTEL-SERVICE
+
+  profiles:
+    active: prod
+  config:
+    import: optional:configserver:http://localhost:8086
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+
+okta:
+  oauth2:
+    issuer: https://dev-44416090.okta.com/oauth2/default
+    audience: api://default
+
+
+
